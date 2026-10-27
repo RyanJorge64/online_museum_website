@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#21170f">
+    <title>Online Museum | Digital Heritage Gallery</title>
+    <link rel="stylesheet" href="../components/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navigationBar">
+            <a class="brand" href="#hero" aria-label="Online Museum home">
+                <span class="brand-mark" aria-hidden="true">M</span>
+                <span class="brand-name">Placeholder</span>
+            </a>
+            <ul class="unorderedList-nav">
+                <li class="list"><a class="listlink" href="#tours">Visits</a> </li>
+                <li class="list"><a class="listlink" href="#exhibits">Exhibitions</a> </li>
+                <li class="list"><a class="listlink" href="#about">About</a> </li>
+                <li class="list"><a class="listlink" href="#timeline">Explore</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="mainComponent">
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
+                <source src="../assets/videos/herovideo.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <h1 id="hero-title"><span class="line">Preserving</span> <span class="line">culture through</span> <span class="line"><em>technology.</em></span></h1>
+                <p class="hero-description">A QR-based digital heritage gallery. Scan an exhibit, then read its story, see its photographs and watch its footage on your phone.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-gold" href="#exhibits">Browse the gallery</a>
+                    <a class="btn btn-ghost" href="#timeline">Follow the timeline</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <h2>Digital Heritage: Preserving Culture Through Technology</h2>
+                    <p>The College of Computer Studies shows how digital tools can document, preserve and promote Philippine cultural heritage. Every part of this museum is built from one of these six practices.</p>
+                </div>
+                <div class="pillars">
+                    <article class="pillar" data-reveal><i class="fa-solid fa-landmark"></i><h3>Digital museum</h3><p>A virtual cultural gallery open at any hour, from any device.</p></article>
+                    <article class="pillar" data-reveal><i class="fa-solid fa-qrcode"></i><h3>QR-enabled exhibits</h3><p>Scan a code beside an artifact to open its full story.</p></article>
+                    <article class="pillar" data-reveal><i class="fa-solid fa-timeline"></i><h3>Interactive timelines</h3><p>Move through centuries of trade, belief and change.</p></article>
+                    <article class="pillar" data-reveal><i class="fa-solid fa-vr-cardboard"></i><h3>Virtual heritage tours</h3><p>Walk through heritage sites without leaving your seat.</p></article>
+                    <article class="pillar" data-reveal><i class="fa-solid fa-box-archive"></i><h3>Digital archives</h3><p>Photographs and historical records, kept and searchable.</p></article>
+                    <article class="pillar" data-reveal><i class="fa-solid fa-film"></i><h3>Multimedia stories</h3><p>Video, audio and text that put Philippine heritage first.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="exhibits">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <h2>The QR Heritage Gallery</h2>
+                    <p>Pick an exhibit to open it. Each one has its own QR code, so visitors in the physical gallery can scan it and continue on a mobile device.</p>
+                </div>
+                <div class="filters" role="group" aria-label="Filter exhibits" data-reveal>
+                    <button class="chip active" data-filter="all">All</button>
+                    <button class="chip" data-filter="Photographs">Photographs</button>
+                    <button class="chip" data-filter="Videos">Videos</button>
+                    <button class="chip" data-filter="Stories">Stories</button>
+                </div>
+                <div class="exhibit-grid" id="exhibitGrid"></div>
+            </div>
+        </section>
+
+        <section class="section" id="timeline">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <h2>Five centuries of trade and culture</h2>
+                    <p>Choose a year to see how ports, ships and customs shaped the culture we know today.</p>
+                </div>
+                <div class="tl" data-reveal>
+                    <div class="tl-track" id="tlTrack" role="tablist" aria-label="Timeline years">
+                        <span class="tl-progress" id="tlProgress"></span>
+                    </div>
+                    <article class="tl-panel" id="tlPanel" aria-live="polite"></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="tours">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <h2>Visit from anywhere</h2>
+                    <p>Virtual tours take you inside the places where this heritage lives.</p>
+                </div>
+                <div class="tours">
+                    <article class="tour" data-reveal><div class="tour-art"><i class="fa-solid fa-ship"></i></div><h3>Port and customs house</h3><p>Follow cargo from ship to warehouse and see how border control began.</p><span class="tag">Opening soon</span></article>
+                    <article class="tour" data-reveal><div class="tour-art"><i class="fa-solid fa-church"></i></div><h3>Walled city walk</h3><p>A guided route through old stone streets, with a photo at every stop.</p><span class="tag">Opening soon</span></article>
+                    <article class="tour" data-reveal><div class="tour-art"><i class="fa-solid fa-mountain"></i></div><h3>Rice terraces by drone</h3><p>Fly over terraces carved by hand, with stories from local farmers.</p><span class="tag">Opening soon</span></article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footerMainWrapper">
+            <div class="footerChildWrapper">
+                <div class="about-container">
+                    <h3>Online Museum</h3>
+                    <p>A project of the College of Computer Studies, built to keep Philippine cultural heritage within reach.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Explore</h3>
+                    <a href="#exhibits">Gallery</a><a href="#timeline">Timeline</a><a href="#tours">Virtual tours</a>
+                </div>
+                <div class="contact-wrapper">
+                    <h3>Visit</h3>
+                    <p>Scan any exhibit code in the gallery to continue on your phone.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <dialog id="modal" aria-labelledby="mTitle">
+        <button class="modal-close" id="mClose" aria-label="Close exhibit"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-art" id="mArt"></div>
+        <div class="modal-body">
+            <p class="meta" id="mMeta"></p>
+            <h3 id="mTitle"></h3>
+            <p id="mText"></p>
+            <div class="qr-box">
+                <div id="qr"></div>
+                <p>Scan to open this exhibit on your phone.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="../components/script.js"></script>
+</body>
+</html>
