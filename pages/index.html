@@ -31,7 +31,7 @@
             </video>
             <div class="hero-content">
                 <h1 id="hero-title"><span class="line">Preserving</span> <span class="line">culture through</span> <span class="line"><em>technology.</em></span></h1>
-                <p class="hero-description">A QR-based digital heritage gallery. Scan an exhibit, then read its story, see its photographs and watch its footage on your phone.</p>
+                <p class="hero-description">A QR-based digital heritage gallery. Scan one code to carry the whole museum on your phone, with its stories, photographs and footage.</p>
                 <div class="hero-actions">
                     <a class="btn btn-gold" href="#exhibits">Browse the gallery</a>
                     <a class="btn btn-ghost" href="#timeline">Follow the timeline</a>
@@ -72,8 +72,8 @@
         <section class="section section-dark" id="exhibits">
             <div class="wrap">
                 <div class="section-head" data-reveal>
-                    <h2>The QR Heritage Gallery</h2>
-                    <p>Pick an exhibit to open it. Each one has its own QR code, so visitors in the physical gallery can scan it and continue on a mobile device.</p>
+                    <h2>The Gallery</h2>
+                    <p>Browse photographs, films and stories from across the islands. Visitors in the physical gallery can scan one code to continue on a mobile device.</p>
                 </div>
                 <div class="filters" role="group" aria-label="Filter exhibits" data-reveal>
                     <button class="chip active" data-filter="all">All</button>
@@ -81,7 +81,76 @@
                     <button class="chip" data-filter="Videos">Videos</button>
                     <button class="chip" data-filter="Stories">Stories</button>
                 </div>
-                <div class="exhibit-grid" id="exhibitGrid"></div>
+                <div class="exhibit-grid" id="exhibitGrid">
+                    <article class="exhibit" data-reveal data-cat="Photographs">
+                        <div class="ex-art"><img src="../assets/images/banaueu-rice-terraces.webp" alt="Banaue Rice Terraces carved into green mountain slopes" loading="lazy"></div>
+                        <div class="ex-body">
+                            <p class="meta">Photographs · Ifugao, Cordillera</p>
+                            <h3>Banaue Rice Terraces</h3>
+                            <p>Carved into the mountains by hand over generations, the terraces show how a community shaped a landscape and still farms it today.</p>
+                            <a class="read-more" href="banaue-rice-terraces.html">Read more</a>
+                        </div>
+                    </article>
+                    <article class="exhibit" data-reveal data-cat="Stories">
+                        <div class="ex-art"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i></div>
+                        <div class="ex-body">
+                            <p class="meta">Stories · Pre-colonial writing</p>
+                            <h3>Baybayin Script</h3>
+                            <p>Baybayin was used across the islands before Spanish rule. Read how the script worked and how designers and students are reviving it.</p>
+                        </div>
+                    </article>
+                    <article class="exhibit" data-reveal data-cat="Videos">
+                        <div class="ex-art"><i class="fa-solid fa-ship" aria-hidden="true"></i></div>
+                        <div class="ex-body">
+                            <p class="meta">Videos · Manila to Acapulco</p>
+                            <h3>The Galleon Trade</h3>
+                            <p>For over two centuries, ships carried silk, silver and spices between Manila and Mexico. This short film traces one voyage.</p>
+                        </div>
+                    </article>
+                    <article class="exhibit" data-reveal data-cat="Photographs">
+                        <div class="ex-art"><i class="fa-solid fa-stamp" aria-hidden="true"></i></div>
+                        <div class="ex-body">
+                            <p class="meta">Photographs · Border control</p>
+                            <h3>The Customs House</h3>
+                            <p>See how customs administration grew from simple port tolls into the system that inspects and records cargo today.</p>
+                        </div>
+                    </article>
+                    <article class="exhibit" data-reveal data-cat="Stories">
+                        <div class="ex-art"><i class="fa-solid fa-church" aria-hidden="true"></i></div>
+                        <div class="ex-body">
+                            <p class="meta">Stories · Intramuros, Manila</p>
+                            <h3>Walled City Stories</h3>
+                            <p>Churches, gates and stone walls hold the memory of a city that was both a fortress and a trading hub.</p>
+                        </div>
+                    </article>
+                    <article class="exhibit" data-reveal data-cat="Videos">
+                        <div class="ex-art"><i class="fa-solid fa-anchor" aria-hidden="true"></i></div>
+                        <div class="ex-body">
+                            <p class="meta">Videos · Maritime heritage</p>
+                            <h3>Harbor Life</h3>
+                            <p>Archival and new footage of fishing boats, ferries and dockside markets, showing how maritime trade still shapes coastal towns.</p>
+                        </div>
+                    </article>
+                    <article class="exhibit" data-reveal data-cat="Videos">
+                        <div class="ex-art"><img src="../assets/images/chocolateHills.webp" alt="Bohol Chocolate Hills" loading="lazy"></div>
+                        <div class="ex-body">
+                            <p class="meta">Photographs · Attraction</p>
+                            <h3>Bohol Chocolate Hills</h3>
+                            <p>More than a thousand distinctive rounded hills form this striking landscape, turning chocolate-brown in the dry season.</p>
+                            <a class="read-more" href="#">Read more</a>
+                        </div>
+                    </article>
+                    <article class="exhibit" data-reveal data-cat="Videos">
+                        <div class="ex-art"><img src="../assets/images/chocolateHills.webp" alt="Bohol Chocolate Hills" loading="lazy"></div>
+                        <div class="ex-body">
+                            <p class="meta">Photographs · Attraction</p>
+                            <h3>Magellan's Cross</h3>
+                            <p>More than a thousand distinctive rounded hills form this striking landscape, turning chocolate-brown in the dry season.</p>
+                            <a class="read-more" href="#">Read more</a>
+                        </div>
+                    </article>
+                </div>
+                </div>
             </div>
         </section>
 
@@ -128,25 +197,12 @@
                 </div>
                 <div class="contact-wrapper">
                     <h3>Visit</h3>
-                    <p>Scan any exhibit code in the gallery to continue on your phone.</p>
+                    <p>Scan the code in the gallery section to open the museum on your phone.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <dialog id="modal" aria-labelledby="mTitle">
-        <button class="modal-close" id="mClose" aria-label="Close exhibit"><i class="fa-solid fa-xmark"></i></button>
-        <div class="modal-art" id="mArt"></div>
-        <div class="modal-body">
-            <p class="meta" id="mMeta"></p>
-            <h3 id="mTitle"></h3>
-            <p id="mText"></p>
-            <div class="qr-box">
-                <div id="qr"></div>
-                <p>Scan to open this exhibit on your phone.</p>
-            </div>
-        </div>
-    </dialog>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="../components/script.js"></script>

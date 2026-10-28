@@ -561,17 +561,23 @@ li {
   background: var(--surface-color);
   color: var(--text-color);
   border: 0;
+  overflow: hidden;
   border-radius: var(--radius);
   overflow: hidden;
-  cursor: pointer;
   font: inherit;
   padding: 0;
-  transition: transform 250ms ease, box-shadow 250ms ease;
+  cursor: pointer;
 }
-.exhibit:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
+.exhibit .ex-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures image fills container without distortion */
+  transition: transform 0.25s ease; /* Smooth animation */
 }
+.exhibit:hover .ex-art img{
+  transform: scale(1.07 ); 
+}
+
 .exhibit.hide {
   display: none;
 }
@@ -582,6 +588,12 @@ li {
   font-size: 2.6rem;
   color: var(--accent-color);
   background: linear-gradient(135deg, #3b2616, var(--main-color));
+  overflow: hidden;
+}
+.ex-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .ex-body {
   padding: 1.25rem;
@@ -597,8 +609,7 @@ li {
   font-size: var(--font-sm);
   line-height: 1.55;
 }
-.ex-body .meta,
-.modal-body .meta {
+.ex-body .meta {
   color: var(--highlight-color);
   font-size: var(--font-sm);
   margin: 0 0 var(--space-sm);
@@ -720,85 +731,28 @@ li {
   font-size: var(--font-sm);
 }
 
-/* Modal */
-dialog {
-  margin: auto;
-  width: min(92vw, 560px);
-  border: 0;
-  border-radius: var(--radius);
-  background: var(--surface-color);
-  color: var(--text-color);
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-}
-dialog[open] {
-  animation: pop 300ms cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-dialog::backdrop {
-  background: rgba(22, 16, 11, 0.7);
-}
-@keyframes pop {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-.modal-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 2.25rem;
-  height: 2.25rem;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 249, 240, 0.9);
-  cursor: pointer;
-  font-size: 1rem;
-}
-.modal-art {
-  display: grid;
-  place-items: center;
-  height: 160px;
-  font-size: 3rem;
-  color: var(--accent-color);
-  background: linear-gradient(135deg, #3b2616, var(--main-color));
-}
-.modal-body {
+/* Site QR code */
+.site-qr {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
   padding: var(--space-lg);
+  border: 1px solid rgba(255, 249, 240, 0.25);
+  border-radius: var(--radius);
 }
-.modal-body h3 {
+.site-qr h3 {
   font-family: var(--heading-font);
   font-weight: 400;
   font-size: var(--font-xl);
   line-height: 1.15;
 }
-.modal-body > p:not(.meta) {
-  margin-top: var(--space-md);
-  line-height: 1.7;
-  color: var(--text-muted);
+.site-qr p {
+  margin-top: var(--space-sm);
+  color: rgba(255, 249, 240, 0.78);
+  line-height: 1.6;
 }
-.qr-box {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--border-color);
-}
-.qr-box p {
-  font-size: var(--font-sm);
-  color: var(--text-muted);
-}
-#qr {
-  padding: 6px;
-  background: var(--surface-color);
-  border: 1px solid var(--border-color);
-  line-height: 0;
-}
+
 
 /* Footer */
 footer {
@@ -863,9 +817,10 @@ footer a:hover {
   .tl-dot {
     font-size: var(--font-sm);
   }
-  .qr-box {
+  .site-qr {
     flex-direction: column;
     align-items: flex-start;
+    padding: var(--space-md);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -875,8 +830,7 @@ footer a:hover {
   }
   .hero h1 .line,
   .hero-description,
-  .hero-actions,
-  dialog[open] {
+  .hero-actions {
     animation: none;
   }
 }

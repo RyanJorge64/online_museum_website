@@ -1,56 +1,6 @@
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- Data ---------- */
-const exhibits = [{
-		id: 'rice-terraces',
-		title: 'Banaue Rice Terraces',
-		cat: 'Photographs',
-		icon: 'fa-mountain',
-		meta: 'Ifugao, Cordillera',
-		text: 'Carved into the mountains by hand over generations, the terraces show how a community shaped a landscape and still farms it today. This archive holds photographs of each planting season.'
-	},
-	{
-		id: 'baybayin',
-		title: 'Baybayin Script',
-		cat: 'Stories',
-		icon: 'fa-pen-nib',
-		meta: 'Pre-colonial writing',
-		text: 'Baybayin was used across the islands before Spanish rule. Read how the script worked, where it appears in surviving documents, and how designers and students are reviving it.'
-	},
-	{
-		id: 'galleon-trade',
-		title: 'The Galleon Trade',
-		cat: 'Videos',
-		icon: 'fa-ship',
-		meta: 'Manila to Acapulco',
-		text: 'For over two centuries, ships carried silk, silver and spices between Manila and Mexico. This short film traces one voyage and the port workers who made it possible.'
-	},
-	{
-		id: 'customs-house',
-		title: 'The Customs House',
-		cat: 'Photographs',
-		icon: 'fa-stamp',
-		meta: 'Border control',
-		text: 'See how customs administration grew from simple port tolls into the system that inspects and records cargo today, through scanned ledgers and period photographs.'
-	},
-	{
-		id: 'walled-city',
-		title: 'Walled City Stories',
-		cat: 'Stories',
-		icon: 'fa-church',
-		meta: 'Intramuros, Manila',
-		text: 'Churches, gates and stone walls hold the memory of a city that was both a fortress and a trading hub. Read accounts from residents and historians.'
-	},
-	{
-		id: 'harbor-footage',
-		title: 'Harbor Life',
-		cat: 'Videos',
-		icon: 'fa-anchor',
-		meta: 'Maritime heritage',
-		text: 'Archival and new footage of fishing boats, ferries and dockside markets, showing how maritime trade still shapes daily life in coastal towns.'
-	}
-];
-
 const events = [{
 		year: '900',
 		title: 'Early island trade',
@@ -98,26 +48,9 @@ function observeReveals(root = document) {
 	});
 }
 
-/* ---------- Exhibit cards ---------- */
-const grid = document.getElementById('exhibitGrid');
-grid.innerHTML = exhibits.map((x) => `
-  <button class="exhibit" data-reveal data-cat="${x.cat}" data-id="${x.id}">
-    <div class="ex-art"><i class="fa-solid ${x.icon}"></i></div>
-    <div class="ex-body">
-      <p class="meta">${x.cat} · ${x.meta}</p>
-      <h3>${x.title}</h3>
-      <p>${x.text.split('. ')[0]}.</p>
-    </div>
-  </button>`).join('');
-observeReveals();
 
-document.querySelectorAll('.chip').forEach((chip) => chip.addEventListener('click', () => {
-	document.querySelectorAll('.chip').forEach((c) => c.classList.toggle('active', c === chip));
-	const f = chip.dataset.filter;
-	grid.querySelectorAll('.exhibit').forEach((card) => {
-		card.classList.toggle('hide', f !== 'all' && card.dataset.cat !== f);
-	});
-}));
+const grid = document.getElementById('exhibitGrid');
+observeReveals();
 
 
 /* ---------- Timeline ---------- */
