@@ -84,11 +84,14 @@ body {
   width: 2.5rem;
   aspect-ratio: 1;
   place-items: center;
-  border: 1px solid var(--accent-color);
-  border-radius: 50%;
+  border: none;
   color: var(--accent-color);
   font-family: var(--heading-font);
   font-size: 1.3rem;
+}
+
+.brand-mark .siteLogo {
+  width: 100%;
 }
 
 .brand-name {
