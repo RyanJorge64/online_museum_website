@@ -28,6 +28,19 @@ const events = [{
 	}
 ];
 
+  const video = document.getElementById('hero-video');
+  const btn = document.getElementById('playPauseBtn');
+
+  btn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = '<i class="fa-regular fa-circle-pause"></i>';
+    } else {
+      video.pause();
+      btn.innerHTML = '<i class="fa-regular fa-circle-play"></i>';
+    }
+  });
+
 /* ---------- Scroll reveal (IntersectionObserver) ---------- */
 const io = new IntersectionObserver((entries) => {
 	entries.forEach((e) => {

@@ -168,6 +168,38 @@ li {
   background-color: #21170f;
 }
 
+#customControls button {
+  position: absolute;
+  right: clamp(1rem, 3vw, 1.5rem);
+  bottom: clamp(1rem, 3vw, 1.5rem);
+  display: grid;
+  width: 3rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  color: var(--surface-color);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 180ms ease, border-color 180ms ease,
+    color 180ms ease, transform 180ms ease;
+}
+
+#customControls button:hover {
+  color: var(--text-muted);
+}
+
+#customControls button:active {
+  transform: scale(0.94);
+}
+
+#customControls button:focus-visible {
+  outline: 2px solid var(--surface-color);
+  outline-offset: 3px;
+}
+
 .hero-video {
   position: absolute;
   z-index: -2;
