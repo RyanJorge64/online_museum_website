@@ -397,6 +397,14 @@ li {
   display: grid;
   gap: var(--space-lg);
 }
+.mostPopularExhibits h2 {
+  font-size: var(--font-xl);
+  font-family: var(--heading-font);
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.1;
+}
 .mostPopular-exhibit {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
