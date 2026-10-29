@@ -72,14 +72,23 @@
                     </article>
 
                     <article class="mostPopular-exhibit mostPopular-exhibit1">
-                        <img data-reveal src="../assets/images/mountApo.webp" alt="Banaue Rice Terraces carved into green mountain slopes">
+                        <img data-reveal src="../assets/images/mountApo.webp" alt="Mount Apo rising above the clouds in Mindanao">
                         <div class="mostPopular-exhibitCopy" data-reveal>
                             <p class="mostPopular-exhibitLabel">03 / Davao (Mindanao)</p>
                             <h3 class="exhibitTitle">Mount Apo</h3>
-                            <p class="image-exhibitDescription">Standing at 2,954 meters, is the most famous natural landmark in Mindanao as the highest peak in the Philippines.</p>
-                            <a class="read-more" href="#">Read more</a>
+                            <p class="image-exhibitDescription">Standing at 2,954 meters, Mount Apo is the highest peak in the Philippines and the most famous natural landmark in Mindanao.</p>
+                            <a class="read-more" href="mount-apo.html">Read more</a>
                         </div>
                     </article>
+                </div>
+
+                <div class="region-links" data-reveal>
+                    <h2>Browse by region</h2>
+                    <div class="region-cards">
+                        <a class="region-card" href="index.html?region=Luzon#exhibits"><strong>Luzon</strong><span class="region-count" data-region-count="Luzon"></span><p>Rice terraces, walled cities and baroque churches of the north.</p></a>
+                        <a class="region-card" href="index.html?region=Visayas#exhibits"><strong>Visayas</strong><span class="region-count" data-region-count="Visayas"></span><p>Where Magellan landed, and where the first Spanish settlement grew.</p></a>
+                        <a class="region-card" href="index.html?region=Mindanao#exhibits"><strong>Mindanao</strong><span class="region-count" data-region-count="Mindanao"></span><p>Sacred mountains, early Islamic history and ancient boats.</p></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -90,90 +99,29 @@
                     <h2>The Gallery</h2>
                     <p>Browse photographs, films and stories from across the islands. Visitors in the physical gallery can scan one code to continue on a mobile device.</p>
                 </div>
-                <div class="filters" role="group" aria-label="Filter exhibits" data-reveal>
-                    <button class="chip active" data-filter="all">All</button>
-                    <button class="chip" data-filter="Photographs">Photographs</button>
-                    <button class="chip" data-filter="Videos">Videos</button>
-                    <button class="chip" data-filter="Stories">Stories</button>
+                <div class="filter-row" data-reveal>
+                    <span class="filter-label" id="regionLabel">Region</span>
+                    <div class="filters" role="group" aria-labelledby="regionLabel" id="regionFilters">
+                        <button class="chip active" data-region="all">All regions</button>
+                        <button class="chip" data-region="Luzon">Luzon</button>
+                        <button class="chip" data-region="Visayas">Visayas</button>
+                        <button class="chip" data-region="Mindanao">Mindanao</button>
+                    </div>
                 </div>
-                <div class="exhibit-grid" id="exhibitGrid">
-                    <article class="exhibit" data-reveal data-cat="Photographs">
-                        <div class="ex-art"><img src="../assets/images/banaueu-rice-terraces.webp" alt="Banaue Rice Terraces carved into green mountain slopes" loading="lazy"></div>
-                        <div class="ex-body">
-                            <p class="meta">Photographs · Ifugao, Cordillera</p>
-                            <h3>Banaue Rice Terraces</h3>
-                            <p>Carved into the mountains by hand over generations, the terraces show how a community shaped a landscape and still farms it today.</p>
-                            <a class="read-more" href="banaue-rice-terraces.html">Read more</a>
-                        </div>
-                    </article>
-                    <article class="exhibit" data-reveal data-cat="Stories">
-                        <div class="ex-art"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i></div>
-                        <div class="ex-body">
-                            <p class="meta">Stories · Pre-colonial writing</p>
-                            <h3>Baybayin Script</h3>
-                            <p>Baybayin was used across the islands before Spanish rule. Read how the script worked and how designers and students are reviving it.</p>
-                        </div>
-                    </article>
-                    <article class="exhibit" data-reveal data-cat="Videos">
-                        <div class="ex-art"><i class="fa-solid fa-ship" aria-hidden="true"></i></div>
-                        <div class="ex-body">
-                            <p class="meta">Videos · Manila to Acapulco</p>
-                            <h3>The Galleon Trade</h3>
-                            <p>For over two centuries, ships carried silk, silver and spices between Manila and Mexico. This short film traces one voyage.</p>
-                        </div>
-                    </article>
-                    <article class="exhibit" data-reveal data-cat="Photographs">
-                        <div class="ex-art"><i class="fa-solid fa-stamp" aria-hidden="true"></i></div>
-                        <div class="ex-body">
-                            <p class="meta">Photographs · Border control</p>
-                            <h3>The Customs House</h3>
-                            <p>See how customs administration grew from simple port tolls into the system that inspects and records cargo today.</p>
-                        </div>
-                    </article>
-                    <article class="exhibit" data-reveal data-cat="Stories">
-                        <div class="ex-art"><i class="fa-solid fa-church" aria-hidden="true"></i></div>
-                        <div class="ex-body">
-                            <p class="meta">Stories · Intramuros, Manila</p>
-                            <h3>Walled City Stories</h3>
-                            <p>Churches, gates and stone walls hold the memory of a city that was both a fortress and a trading hub.</p>
-                        </div>
-                    </article>
-                    <article class="exhibit" data-reveal data-cat="Videos">
-                        <div class="ex-art"><i class="fa-solid fa-anchor" aria-hidden="true"></i></div>
-                        <div class="ex-body">
-                            <p class="meta">Videos · Maritime heritage</p>
-                            <h3>Harbor Life</h3>
-                            <p>Archival and new footage of fishing boats, ferries and dockside markets, showing how maritime trade still shapes coastal towns.</p>
-                        </div>
-                    </article>
-                    <article class="exhibit" data-reveal data-cat="Videos">
-                        <div class="ex-art"><img src="../assets/images/chocolateHills.webp" alt="Bohol Chocolate Hills" loading="lazy"></div>
-                        <div class="ex-body">
-                            <p class="meta">Photographs · Attraction</p>
-                            <h3>Bohol Chocolate Hills</h3>
-                            <p>More than a thousand distinctive rounded hills form this striking landscape, turning chocolate-brown in the dry season.</p>
-                            <a class="read-more" href="#">Read more</a>
-                        </div>
-                    </article>
-                    <article class="exhibit" data-reveal data-cat="Videos">
-                        <div class="ex-art"><img src="../assets/images/mountApo.webp" alt="Bohol Chocolate Hills" loading="lazy"></div>
-                        <div class="ex-body">
-                            <p class="meta">Photographs · Attraction</p>
-                            <h3>Mount Apo</h3>
-                            <p>Standing at 2,954 meters, is the most famous natural landmark in Mindanao as the highest peak in the Philippines.</p>
-                            <a class="read-more" href="#">Read more</a>
-                        </div>
-                    </article>
-                    <article class="exhibit" data-reveal data-cat="Videos">
-                        <div class="ex-art"><img src="../assets/images/magellansCross.jpg" alt="Bohol Chocolate Hills" loading="lazy"></div>
-                        <div class="ex-body">
-                            <p class="meta">Photographs · Attraction</p>
-                            <h3>Magellan's Cross Pavilion</h3>
-                            <p>Cebu City's historic pavilion shelters a cross traditionally associated with the arrival of Christianity in the Philippines in 1521.</p>
-                            <a class="read-more" href="#">Read more</a>
-                        </div>
-                    </article>
+                <div class="filter-row" data-reveal>
+                    <span class="filter-label" id="typeLabel">Type</span>
+                    <div class="filters" role="group" aria-labelledby="typeLabel" id="typeFilters">
+                        <button class="chip active" data-filter="all">All</button>
+                        <button class="chip" data-filter="Photographs">Photographs</button>
+                        <button class="chip" data-filter="Videos">Videos</button>
+                        <button class="chip" data-filter="Stories">Stories</button>
+                    </div>
                 </div>
+                <p class="result-count" id="resultCount" aria-live="polite"></p>
+                <div class="exhibit-grid" id="exhibitGrid"></div>
+                <div class="empty-state" id="emptyState" hidden>
+                    <p>No exhibits match this region and type yet.</p>
+                    <button class="btn btn-gold" id="resetFilters" type="button">Show all exhibits</button>
                 </div>
             </div>
         </section>
@@ -217,7 +165,7 @@
                 </div>
                 <div class="footer-links">
                     <h3>Explore</h3>
-                    <a href="#exhibits">Gallery</a><a href="#timeline">Timeline</a><a href="#tours">Virtual tours</a>
+                    <a href="#exhibits">Gallery</a><a href="index.html?region=Luzon#exhibits">Luzon</a><a href="index.html?region=Visayas#exhibits">Visayas</a><a href="index.html?region=Mindanao#exhibits">Mindanao</a><a href="#timeline">Timeline</a><a href="#tours">Virtual tours</a>
                 </div>
                 <div class="contact-wrapper">
                     <h3>Visit</h3>
@@ -229,6 +177,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="../components/exhibits.js"></script>
     <script src="../components/script.js"></script>
 </body>
 </html>

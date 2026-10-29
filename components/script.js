@@ -62,7 +62,80 @@ function observeReveals(root = document) {
 }
 
 
+/* ---------- Gallery: built from EXHIBITS, filtered by region and type ---------- */
 const grid = document.getElementById('exhibitGrid');
+const resultCount = document.getElementById('resultCount');
+const emptyState = document.getElementById('emptyState');
+const regionChips = document.querySelectorAll('#regionFilters .chip');
+const typeChips = document.querySelectorAll('#typeFilters .chip');
+const filter = { region: 'all', type: 'all' };
+
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const regionLabel = (ex) => (ex.regions.length === 3 ? 'Nationwide' : ex.regions.join(' and '));
+
+function cardHTML(ex) {
+	const art = ex.image
+		? `<img src="../assets/images/${esc(ex.image)}" alt="${esc(ex.imageAlt || ex.title)}" loading="lazy">`
+		: `<i class="${esc(ex.icon)}" aria-hidden="true"></i>`;
+	return `<article class="exhibit" data-reveal data-cat="${esc(ex.category)}" data-regions="${esc(ex.regions.join(','))}">
+		<div class="ex-art">${art}<span class="ex-region">${esc(regionLabel(ex))}</span></div>
+		<div class="ex-body">
+			<p class="meta">${esc(ex.category)} · ${esc(ex.place)}</p>
+			<h3>${esc(ex.title)}</h3>
+			<p>${esc(ex.summary)}</p>
+			<a class="read-more" href="${esc(ex.id)}.html">Read the history</a>
+		</div>
+	</article>`;
+}
+grid.innerHTML = EXHIBITS.map(cardHTML).join('');
+const cards = [...grid.querySelectorAll('.exhibit')];
+
+/* Counts shown on the region chips and the "Browse by region" cards */
+['Luzon', 'Visayas', 'Mindanao'].forEach((r) => {
+	const n = EXHIBITS.filter((ex) => ex.regions.includes(r)).length;
+	const chip = document.querySelector(`#regionFilters [data-region="${r}"]`);
+	if (chip) chip.insertAdjacentHTML('beforeend', `<span class="chip-count">${n}</span>`);
+	document.querySelectorAll(`[data-region-count="${r}"]`).forEach((el) => (el.textContent = `${n} exhibits`));
+});
+
+function applyFilters() {
+	let shown = 0;
+	cards.forEach((card) => {
+		const okRegion = filter.region === 'all' || card.dataset.regions.split(',').includes(filter.region);
+		const okType = filter.type === 'all' || card.dataset.cat === filter.type;
+		const visible = okRegion && okType;
+		card.classList.toggle('hide', !visible);
+		if (visible) shown++;
+	});
+	regionChips.forEach((c) => c.classList.toggle('active', c.dataset.region === filter.region));
+	typeChips.forEach((c) => c.classList.toggle('active', c.dataset.filter === filter.type));
+	regionChips.forEach((c) => c.setAttribute('aria-pressed', c.dataset.region === filter.region));
+	typeChips.forEach((c) => c.setAttribute('aria-pressed', c.dataset.filter === filter.type));
+	const where = filter.region === 'all' ? 'all regions' : filter.region;
+	resultCount.textContent = `Showing ${shown} of ${cards.length} exhibits in ${where}`;
+	emptyState.hidden = shown > 0;
+	grid.hidden = shown === 0;
+	try {
+		const url = new URL(location.href);
+		if (filter.region === 'all') url.searchParams.delete('region');
+		else url.searchParams.set('region', filter.region);
+		history.replaceState(null, '', url);
+	} catch (err) { /* URL updates are optional, e.g. when opened from disk */ }
+}
+
+regionChips.forEach((c) => c.addEventListener('click', () => { filter.region = c.dataset.region; applyFilters(); }));
+typeChips.forEach((c) => c.addEventListener('click', () => { filter.type = c.dataset.filter; applyFilters(); }));
+document.getElementById('resetFilters').addEventListener('click', () => {
+	filter.region = 'all';
+	filter.type = 'all';
+	applyFilters();
+});
+
+/* Open with a region already selected, e.g. index.html?region=Visayas#exhibits */
+const wanted = new URLSearchParams(location.search).get('region');
+const match = ['Luzon', 'Visayas', 'Mindanao'].find((r) => r.toLowerCase() === (wanted || '').toLowerCase());
+if (match) filter.region = match;
+applyFilters();
 observeReveals();
 
 
